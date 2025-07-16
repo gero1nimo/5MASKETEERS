@@ -3,13 +3,8 @@ import 'package:provider/provider.dart';
 import '../constants/app_constants.dart';
 import '../providers/theme_provider.dart';
 import '../themes/app_themes.dart';
-import '../widgets/common/app_bar_widget.dart';
 import '../widgets/common/bottom_navigation_widget.dart';
 import '../widgets/common/user_info_widget.dart';
-import 'home_screen.dart';
-import 'calendar_screen.dart';
-import 'campus_map_screen.dart';
-import 'qr_access_screen.dart';
 import 'feedback_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -236,7 +231,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       child: Column(
         children: [
-          
           _buildDivider(),
           _buildMenuItem(
             icon: Icons.lock,
@@ -246,7 +240,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // TODO: Şifre değiştirme sayfasına git / Navigate to password change page
             },
           ),
-          
+
           _buildDivider(),
           _buildMenuItem(
             icon: Icons.notifications,
@@ -542,7 +536,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       // TODO: Cafeteria Menu sayfasına git
                     },
                   ),
-                  
+
                   _buildDrawerItem(
                     icon: Icons.feedback,
                     title: 'Feedbacks',
