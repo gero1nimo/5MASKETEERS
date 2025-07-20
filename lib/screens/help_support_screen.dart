@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
+import '../constants/app_constants.dart';
 import '../widgets/common/app_bar_widget.dart';
 import '../widgets/common/app_drawer_widget.dart';
 import '../widgets/common/bottom_navigation_widget.dart';
@@ -32,6 +33,7 @@ class HelpSupportScreen extends StatelessWidget {
   }
 
   Widget _buildContactRow({
+    required BuildContext context,
     required IconData icon,
     required String label,
     required String value,
@@ -42,7 +44,7 @@ class HelpSupportScreen extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, color: const Color(0xFF1E3A8A)),
+        Icon(icon, color: AppConstants.getIconColor(context)),
         const SizedBox(width: 12),
         Expanded(
           child: isPhone
@@ -50,10 +52,10 @@ class HelpSupportScreen extends StatelessWidget {
                   onTap: () => _launchPhone(phoneNumber),
                   child: Text(
                     '$label $value',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       decoration: TextDecoration.underline,
-                      color: Color(0xFF1E3A8A),
+                      color: AppConstants.getIconColor(context),
                     ),
                   ),
                 )
@@ -67,7 +69,7 @@ class HelpSupportScreen extends StatelessWidget {
                           ? TextDecoration.underline
                           : null,
                       color: onTap != null
-                          ? const Color(0xFF1E3A8A)
+                          ? AppConstants.getIconColor(context)
                           : Colors.black,
                     ),
                   ),
@@ -98,10 +100,10 @@ class HelpSupportScreen extends StatelessWidget {
           children: [
             Text(
               AppLocalizations.of(context)!.contact,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E3A8A),
+                color: AppConstants.getIconColor(context),
               ),
             ),
             const SizedBox(height: 16),
@@ -113,10 +115,10 @@ class HelpSupportScreen extends StatelessWidget {
             // Kavacık Kuzey Yerleşkesi
             Text(
               AppLocalizations.of(context)!.kavacikNorth,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E3A8A),
+                color: AppConstants.getIconColor(context),
               ),
             ),
             const SizedBox(height: 8),
@@ -126,33 +128,39 @@ class HelpSupportScreen extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             _buildContactRow(
+              context: context,
               icon: Icons.phone,
               label: 'Telefon:',
               value: '444 85 44',
               onTap: () => _launchPhone('4448544'),
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxRectorate,
               value: '0212 531 75 55',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxAccounting,
               value: '0212 521 28 52',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxFaculties,
               value: '0212 521 23 77',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.email,
               label: 'Kep Adresi:',
               value: 'medipoluniversitesi@hs03.kep.tr',
               onTap: () => _launchEmail('medipoluniversitesi@hs03.kep.tr'),
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.location_on,
               label: AppLocalizations.of(context)!.address,
               value:
@@ -165,10 +173,10 @@ class HelpSupportScreen extends StatelessWidget {
             // Haliç Yerleşkesi
             Text(
               AppLocalizations.of(context)!.halicCampus,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E3A8A),
+                color: AppConstants.getIconColor(context),
               ),
             ),
             const SizedBox(height: 8),
@@ -178,27 +186,32 @@ class HelpSupportScreen extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             _buildContactRow(
+              context: context,
               icon: Icons.phone,
               label: 'Telefon:',
               value: '444 85 44',
               onTap: () => _launchPhone('4448544'),
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxRectorate,
               value: '0212 531 75 55',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxAccounting,
               value: '0212 521 28 52',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxFaculties,
               value: '0212 521 23 77',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.location_on,
               label: AppLocalizations.of(context)!.address,
               value:
@@ -214,32 +227,36 @@ class HelpSupportScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E3A8A),
+                color: AppConstants.getIconColor(context),
               ),
             ),
             const SizedBox(height: 8),
             Text(
               AppLocalizations.of(context)!.bagcilarCampusDesc,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 4),
             _buildContactRow(
+              context: context,
               icon: Icons.phone,
               label: 'Telefon:',
               value: '444 70 44',
               onTap: () => _launchPhone('4447044'),
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.phone,
               label: AppLocalizations.of(context)!.phoneInternal,
               value: '0212 460 77 77 - (7578)',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.print,
               label: AppLocalizations.of(context)!.faxFaculties,
               value: '0212 521 23 77',
             ),
             _buildContactRow(
+              context: context,
               icon: Icons.location_on,
               label: AppLocalizations.of(context)!.address,
               value:
@@ -253,10 +270,10 @@ class HelpSupportScreen extends StatelessWidget {
             ExpansionTile(
               title: Text(
                 AppLocalizations.of(context)!.healthResearchCenters,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF1E3A8A),
+                  color: AppConstants.getIconColor(context),
                 ),
               ),
               children: [
@@ -269,17 +286,20 @@ class HelpSupportScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildContactRow(
+                        context: context,
                         icon: Icons.phone,
                         label: 'Telefon:',
                         value: '444 63 44',
                         onTap: () => _launchPhone('4446344'),
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.print,
                         label: 'Faks:',
                         value: '0212 5317555',
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.location_on,
                         label: AppLocalizations.of(context)!.address,
                         value:
@@ -291,7 +311,7 @@ class HelpSupportScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
                   title: Text(
                     AppLocalizations.of(context)!.healthResearchCentersVatan,
@@ -301,17 +321,20 @@ class HelpSupportScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildContactRow(
+                        context: context,
                         icon: Icons.phone,
                         label: 'Telefon:',
                         value: '0212 631 2050',
                         onTap: () => _launchPhone('02126312050'),
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.print,
                         label: 'Faks:',
                         value: '0212 5212783',
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.language,
                         label: AppLocalizations.of(context)!.website,
                         value: 'http://vatan.medipol.edu.tr/',
@@ -323,6 +346,7 @@ class HelpSupportScreen extends StatelessWidget {
                         },
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.location_on,
                         label: AppLocalizations.of(context)!.address,
                         value:
@@ -334,7 +358,7 @@ class HelpSupportScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
                   title: Text(
                     AppLocalizations.of(context)!.healthResearchCentersEsenler,
@@ -344,12 +368,14 @@ class HelpSupportScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildContactRow(
+                        context: context,
                         icon: Icons.phone,
                         label: 'Telefon:',
                         value: '0212 440 1000',
                         onTap: () => _launchPhone('02124401000'),
                       ),
                       _buildContactRow(
+                        context: context,
                         icon: Icons.location_on,
                         label: AppLocalizations.of(context)!.address,
                         value: 'Birlik Mah. Bahçeler Cd. No:5 ESENLER/İSTANBUL',
