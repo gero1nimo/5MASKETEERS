@@ -4,11 +4,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'providers/theme_provider.dart';
 import 'providers/authentication_provider.dart';
+import 'services/firebase_auth_service.dart';
 import 'screens/login_screen.dart';
-import 'screens/initial_loading_screen.dart';
 import 'constants/app_constants.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:intl/intl.dart';
 import 'providers/language_provider.dart';
 import 'l10n/app_localizations.dart';
 
@@ -20,16 +19,20 @@ void main() async {
 
   try {
     // Firebase'i başlat / Initialize Firebase
-    print('🔥 Firebase initialization starting...');
+    // Firebase'i başlat / Initialize Firebase
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    print('✅ Firebase initialized successfully');
+    // Firebase başarıyla başlatıldı / Firebase initialized successfully
+
+    // Firebase Auth Service'i başlat / Initialize Firebase Auth Service
+    final firebaseAuthService = FirebaseAuthService();
+    await firebaseAuthService.initialize();
 
     // Uygulamayı çalıştır / Run the app
     runApp(const MyApp());
   } catch (e) {
-    print('❌ Firebase initialization failed: $e');
+    // Firebase başlatma başarısız: $e / Firebase initialization failed: $e
     // Firebase başarısız olsa bile uygulamayı çalıştır / Run app even if Firebase fails
     runApp(const MyApp());
   }

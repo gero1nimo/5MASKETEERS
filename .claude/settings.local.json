@@ -1,15 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "mcp__ide__getDiagnostics",
-      "Bash(npm run build:*)",
-      "Bash(flutter analyze:*)",
-      "Bash(rename:*)",
-      "Bash(mv:*)",
-      "Bash(flutter test:*)",
+      "Bash(flutter pub run build_runner build:*)",
+      "Bash(dart run:*)",
+      "Bash(flutter clean:*)",
       "Bash(flutter pub:*)",
+      "Bash(flutter analyze:*)",
+      "Bash(flutter packages pub run build_runner build:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(flutter gen-l10n:*)",
+      "Bash(flutter packages:*)",
       "Bash(flutter build:*)",
-      "Bash(rm:*)"
+      "Bash(flutter run:*)",
+      "Bash(flutter test:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

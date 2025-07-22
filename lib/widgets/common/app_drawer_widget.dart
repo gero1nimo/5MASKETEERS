@@ -10,6 +10,7 @@ import '../../screens/academic_calendar_screen.dart';
 import '../../l10n/app_localizations.dart';
 import '../../screens/home_screen.dart';
 import '../../constants/app_constants.dart';
+import '../../services/firebase_auth_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Uygulama drawer widget'ı - Tüm sayfalarda kullanılan ana drawer / App drawer widget - Main drawer used across all pages
@@ -17,6 +18,30 @@ class AppDrawerWidget extends StatelessWidget {
   final int currentPageIndex;
 
   const AppDrawerWidget({super.key, required this.currentPageIndex});
+
+  // Firebase'den kullanıcı adını al / Get user name from Firebase
+  String _getUserName(BuildContext context) {
+    final firebaseAuthService = FirebaseAuthService();
+    return firebaseAuthService.currentAppUser?.displayName ??
+        AppLocalizations.of(context)!.userName;
+  }
+
+  // Firebase'den kullanıcı bölümünü al / Get user department from Firebase
+  String _getUserDepartment(BuildContext context) {
+    final firebaseAuthService = FirebaseAuthService();
+    return firebaseAuthService.currentAppUser?.department ??
+        AppLocalizations.of(context)!.userDepartment;
+  }
+
+  // Firebase'den kullanıcı rolünü al / Get user role from Firebase
+  String _getUserGrade(BuildContext context) {
+    final firebaseAuthService = FirebaseAuthService();
+    final user = firebaseAuthService.currentAppUser;
+    if (user != null) {
+      return user.role; // This will return "Öğrenci", "Personel", etc.
+    }
+    return AppLocalizations.of(context)!.userGrade;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +52,10 @@ class AppDrawerWidget extends StatelessWidget {
   Widget _buildModernSideDrawer(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgGradient = isDark
-        ? [const Color(0xFF181F2A), AppConstants.primaryColor.withValues(alpha: 0.85)]
+        ? [
+            const Color(0xFF181F2A),
+            AppConstants.primaryColor.withValues(alpha: 0.85),
+          ]
         : [
             AppConstants.primaryColor,
             AppConstants.primaryColor.withValues(alpha: 0.85),
@@ -212,7 +240,9 @@ class AppDrawerWidget extends StatelessWidget {
                     ),
                     child: Icon(
                       Icons.person,
-                      color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurface.withValues(alpha: 0.6),
                       size: 40,
                     ),
                   );
@@ -222,7 +252,7 @@ class AppDrawerWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            AppLocalizations.of(context)!.userName,
+            _getUserName(context),
             style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
@@ -231,7 +261,7 @@ class AppDrawerWidget extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            AppLocalizations.of(context)!.userDepartment,
+            _getUserDepartment(context),
             style: const TextStyle(
               color: Colors.white70,
               fontSize: 14,
@@ -240,7 +270,7 @@ class AppDrawerWidget extends StatelessWidget {
           ),
           const SizedBox(height: 2),
           Text(
-            AppLocalizations.of(context)!.userGrade,
+            _getUserGrade(context),
             style: const TextStyle(
               color: Colors.white70,
               fontSize: 13,
@@ -475,7 +505,10 @@ class AppDrawerWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.2),
+            width: 1,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

@@ -62,8 +62,7 @@ import 'app_localizations_tr.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,18 +82,17 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
-    Locale('tr'),
+    Locale('tr')
   ];
 
   /// No description provided for @appTitle.
@@ -419,14 +416,8 @@ abstract class AppLocalizations {
   /// No description provided for @feedback.
   ///
   /// In en, this message translates to:
-  /// **'Feedback & Request'**
-  String get feedback;
-
-  /// No description provided for @feedbackOnly.
-  ///
-  /// In en, this message translates to:
   /// **'Feedback'**
-  String get feedbackOnly;
+  String get feedback;
 
   /// No description provided for @quickStats.
   ///
@@ -1322,6 +1313,12 @@ abstract class AppLocalizations {
   /// **'No courses found for today.'**
   String get noCoursesToday;
 
+  /// No description provided for @noCoursesTodayMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No courses are scheduled for today. You can add courses from the calendar section.'**
+  String get noCoursesTodayMessage;
+
   /// No description provided for @timelineView.
   ///
   /// In en, this message translates to:
@@ -1718,6 +1715,390 @@ abstract class AppLocalizations {
   /// **'Sunday'**
   String get sunday;
 
+  /// No description provided for @halicCampus.
+  ///
+  /// In en, this message translates to:
+  /// **'Haliç Campus'**
+  String get halicCampus;
+
+  /// No description provided for @halicCampusDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Campus; Medipol University Haliç Campus'**
+  String get halicCampusDesc;
+
+  /// No description provided for @bagcilarCampus.
+  ///
+  /// In en, this message translates to:
+  /// **'Bağcılar Campus'**
+  String get bagcilarCampus;
+
+  /// No description provided for @bagcilarCampusDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Campus; University Hospital (Bağcılar Campus)'**
+  String get bagcilarCampusDesc;
+
+  /// No description provided for @healthResearchCenters.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Research Centers'**
+  String get healthResearchCenters;
+
+  /// No description provided for @healthResearchCentersDent.
+  ///
+  /// In en, this message translates to:
+  /// **'Health RC Dental Hospital'**
+  String get healthResearchCentersDent;
+
+  /// No description provided for @healthResearchCentersVatan.
+  ///
+  /// In en, this message translates to:
+  /// **'Health RC Vatan Clinic'**
+  String get healthResearchCentersVatan;
+
+  /// No description provided for @healthResearchCentersEsenler.
+  ///
+  /// In en, this message translates to:
+  /// **'Health RC Esenler Hospital'**
+  String get healthResearchCentersEsenler;
+
+  /// No description provided for @fax.
+  ///
+  /// In en, this message translates to:
+  /// **'Fax:'**
+  String get fax;
+
+  /// No description provided for @faxRectorate.
+  ///
+  /// In en, this message translates to:
+  /// **'Fax (Rectorate):'**
+  String get faxRectorate;
+
+  /// No description provided for @faxAccounting.
+  ///
+  /// In en, this message translates to:
+  /// **'Fax (Accounting):'**
+  String get faxAccounting;
+
+  /// No description provided for @faxFaculties.
+  ///
+  /// In en, this message translates to:
+  /// **'Fax (Faculties):'**
+  String get faxFaculties;
+
+  /// No description provided for @phoneInternal.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone (Internal):'**
+  String get phoneInternal;
+
+  /// No description provided for @website.
+  ///
+  /// In en, this message translates to:
+  /// **'Website:'**
+  String get website;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address:'**
+  String get address;
+
+  /// No description provided for @feedbackOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback Only'**
+  String get feedbackOnly;
+
+  /// No description provided for @pleaseAcceptTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Please accept the terms'**
+  String get pleaseAcceptTerms;
+
+  /// No description provided for @accountCreatedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Account created successfully'**
+  String get accountCreatedSuccessfully;
+
+  /// No description provided for @signUpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUpTitle;
+
+  /// No description provided for @signUpSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account'**
+  String get signUpSubtitle;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @fullNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get fullNameHint;
+
+  /// No description provided for @fullNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name is required'**
+  String get fullNameRequired;
+
+  /// No description provided for @fullNameInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid full name'**
+  String get fullNameInvalid;
+
+  /// No description provided for @emailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get emailAddress;
+
+  /// No description provided for @emailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get emailHint;
+
+  /// No description provided for @emailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get emailRequired;
+
+  /// No description provided for @emailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email address'**
+  String get emailInvalid;
+
+  /// No description provided for @createPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Password'**
+  String get createPassword;
+
+  /// No description provided for @createPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a password'**
+  String get createPasswordHint;
+
+  /// No description provided for @passwordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get passwordRequired;
+
+  /// No description provided for @passwordTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too short'**
+  String get passwordTooShort;
+
+  /// No description provided for @passwordTooWeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is too weak'**
+  String get passwordTooWeak;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @confirmPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter your password'**
+  String get confirmPasswordHint;
+
+  /// No description provided for @confirmPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password'**
+  String get confirmPasswordRequired;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @phoneOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone (optional)'**
+  String get phoneOptional;
+
+  /// No description provided for @phoneHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get phoneHint;
+
+  /// No description provided for @phoneInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid phone number'**
+  String get phoneInvalid;
+
+  /// No description provided for @studentIdOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Student ID (optional)'**
+  String get studentIdOptional;
+
+  /// No description provided for @studentIdHintSignup.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your student ID'**
+  String get studentIdHintSignup;
+
+  /// No description provided for @departmentOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Department (optional)'**
+  String get departmentOptional;
+
+  /// No description provided for @selectDepartment.
+  ///
+  /// In en, this message translates to:
+  /// **'Select department'**
+  String get selectDepartment;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
+
+  /// No description provided for @signUpHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up here'**
+  String get signUpHere;
+
+  /// No description provided for @signInHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in here'**
+  String get signInHere;
+
+  /// No description provided for @firstYear.
+  ///
+  /// In en, this message translates to:
+  /// **'First Year'**
+  String get firstYear;
+
+  /// No description provided for @secondYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Second Year'**
+  String get secondYear;
+
+  /// No description provided for @thirdYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Third Year'**
+  String get thirdYear;
+
+  /// No description provided for @fourthYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Fourth Year'**
+  String get fourthYear;
+
+  /// No description provided for @graduateStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Graduate Student'**
+  String get graduateStudent;
+
+  /// No description provided for @phdStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'PhD Student'**
+  String get phdStudent;
+
+  /// No description provided for @yearOfStudyOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Year of Study (optional)'**
+  String get yearOfStudyOptional;
+
+  /// No description provided for @selectYearOfStudy.
+  ///
+  /// In en, this message translates to:
+  /// **'Select year of study'**
+  String get selectYearOfStudy;
+
+  /// No description provided for @birthDateOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth Date (optional)'**
+  String get birthDateOptional;
+
+  /// No description provided for @selectBirthDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select birth date'**
+  String get selectBirthDate;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @preferNotToSay.
+  ///
+  /// In en, this message translates to:
+  /// **'Prefer not to say'**
+  String get preferNotToSay;
+
+  /// No description provided for @genderOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender (optional)'**
+  String get genderOptional;
+
+  /// No description provided for @selectGender.
+  ///
+  /// In en, this message translates to:
+  /// **'Select gender'**
+  String get selectGender;
+
   /// No description provided for @language.
   ///
   /// In en, this message translates to:
@@ -1727,57 +2108,17 @@ abstract class AppLocalizations {
   /// No description provided for @languageDesc.
   ///
   /// In en, this message translates to:
-  /// **'Change the application language.'**
+  /// **'Change the app language'**
   String get languageDesc;
 
-  /// No description provided for @halicCampus.
-  String get halicCampus;
-
-  /// No description provided for @halicCampusDesc.
-  String get halicCampusDesc;
-
-  /// No description provided for @bagcilarCampus.
-  String get bagcilarCampus;
-
-  /// No description provided for @bagcilarCampusDesc.
-  String get bagcilarCampusDesc;
-
-  /// No description provided for @healthResearchCenters.
-  String get healthResearchCenters;
-
-  /// No description provided for @healthResearchCentersDent.
-  String get healthResearchCentersDent;
-
-  /// No description provided for @healthResearchCentersVatan.
-  String get healthResearchCentersVatan;
-
-  /// No description provided for @healthResearchCentersEsenler.
-  String get healthResearchCentersEsenler;
-
-  /// No description provided for @fax.
-  String get fax;
-
-  /// No description provided for @faxRectorate.
-  String get faxRectorate;
-
-  /// No description provided for @faxAccounting.
-  String get faxAccounting;
-
-  /// No description provided for @faxFaculties.
-  String get faxFaculties;
-
-  /// No description provided for @phoneInternal.
-  String get phoneInternal;
-
-  /// No description provided for @website.
-  String get website;
-
-  /// No description provided for @address.
-  String get address;
+  /// No description provided for @rememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember Me'**
+  String get rememberMe;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -1786,26 +2127,25 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'tr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'tr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'tr':
-      return AppLocalizationsTr();
+    case 'en': return AppLocalizationsEn();
+    case 'tr': return AppLocalizationsTr();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.',
+    'that was used.'
   );
 }

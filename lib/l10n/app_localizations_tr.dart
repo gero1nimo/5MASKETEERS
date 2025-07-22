@@ -48,12 +48,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get languageEnglish => 'İngilizce';
 
   @override
-  String get language => 'Dil';
-
-  @override
-  String get languageDesc => 'Uygulama dilini değiştirin.';
-
-  @override
   String get homeWelcome => 'Hoş geldin,';
 
   @override
@@ -175,10 +169,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get inbox => 'Gelen Kutusu';
 
   @override
-  String get feedback => 'Geri Bildirim ve Talep';
-
-  @override
-  String get feedbackOnly => 'Geri Bildirim';
+  String get feedback => 'Geri Bildirim';
 
   @override
   String get quickStats => 'Hızlı İstatistikler';
@@ -654,6 +645,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noCoursesToday => 'Bugün için ders bulunamadı.';
 
   @override
+  String get noCoursesTodayMessage =>
+      'Bugün için herhangi bir ders planlanmamış. Takvim bölümünden ders ekleyebilirsiniz.';
+
+  @override
   String get timelineView => 'Zaman Çizelgesi Görünümü';
 
   @override
@@ -856,35 +851,205 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get halicCampus => 'Haliç Yerleşkesi';
+
   @override
   String get halicCampusDesc =>
       'Yerleşke; Medipol Üniversitesi Haliç Yerleşkesi';
+
   @override
   String get bagcilarCampus => 'Bağcılar Yerleşkesi';
+
   @override
   String get bagcilarCampusDesc =>
       'Yerleşke; Üniversite Hastanesi (Bağcılar Yerleşkesi)';
+
   @override
   String get healthResearchCenters => 'Sağlık Uygulama Araştırma Merkezleri';
+
   @override
   String get healthResearchCentersDent => 'Sağlık UA Merkezi Diş Hastanesi';
+
   @override
   String get healthResearchCentersVatan => 'Sağlık UA Merkezi Vatan Kliniği';
+
   @override
   String get healthResearchCentersEsenler =>
       'Sağlık UA Merkezi Esenler Hastanesi';
+
   @override
   String get fax => 'Faks:';
+
   @override
   String get faxRectorate => 'Faks (Rektörlük):';
+
   @override
   String get faxAccounting => 'Faks (Muhasebe):';
+
   @override
   String get faxFaculties => 'Faks (Fakülteler):';
+
   @override
   String get phoneInternal => 'Telefon (Dahili):';
+
   @override
   String get website => 'İnternet Sitesi:';
+
   @override
   String get address => 'Adres:';
+
+  @override
+  String get feedbackOnly => 'Sadece Geri Bildirimler';
+
+  @override
+  String get pleaseAcceptTerms => 'Lütfen şartları kabul edin';
+
+  @override
+  String get accountCreatedSuccessfully => 'Hesap başarıyla oluşturuldu';
+
+  @override
+  String get signUpTitle => 'Kayıt Ol';
+
+  @override
+  String get signUpSubtitle => 'Hesabınızı oluşturun';
+
+  @override
+  String get fullName => 'Ad Soyad';
+
+  @override
+  String get fullNameHint => 'Adınızı ve soyadınızı girin';
+
+  @override
+  String get fullNameRequired => 'Ad soyad gerekli';
+
+  @override
+  String get fullNameInvalid => 'Geçersiz ad soyad';
+
+  @override
+  String get emailAddress => 'E-posta Adresi';
+
+  @override
+  String get emailHint => 'E-posta adresinizi girin';
+
+  @override
+  String get emailRequired => 'E-posta gerekli';
+
+  @override
+  String get emailInvalid => 'Geçersiz e-posta adresi';
+
+  @override
+  String get createPassword => 'Şifre Oluştur';
+
+  @override
+  String get createPasswordHint => 'Bir şifre girin';
+
+  @override
+  String get passwordRequired => 'Şifre gerekli';
+
+  @override
+  String get passwordTooShort => 'Şifre çok kısa';
+
+  @override
+  String get passwordTooWeak => 'Şifre çok zayıf';
+
+  @override
+  String get confirmPassword => 'Şifreyi Tekrar Gir';
+
+  @override
+  String get confirmPasswordHint => 'Şifrenizi tekrar girin';
+
+  @override
+  String get confirmPasswordRequired => 'Şifre tekrarı gerekli';
+
+  @override
+  String get passwordsDoNotMatch => 'Şifreler uyuşmuyor';
+
+  @override
+  String get phoneOptional => 'Telefon (isteğe bağlı)';
+
+  @override
+  String get phoneHint => 'Telefon numaranızı girin';
+
+  @override
+  String get phoneInvalid => 'Geçersiz telefon numarası';
+
+  @override
+  String get studentIdOptional => 'Öğrenci Numarası (isteğe bağlı)';
+
+  @override
+  String get studentIdHintSignup => 'Öğrenci numaranızı girin';
+
+  @override
+  String get departmentOptional => 'Bölüm (isteğe bağlı)';
+
+  @override
+  String get selectDepartment => 'Bölüm seçin';
+
+  @override
+  String get createAccount => 'Hesap Oluştur';
+
+  @override
+  String get dontHaveAccount => 'Hesabınız yok mu?';
+
+  @override
+  String get alreadyHaveAccount => 'Zaten hesabınız var mı?';
+
+  @override
+  String get signUpHere => 'Buradan kayıt ol';
+
+  @override
+  String get signInHere => 'Buradan giriş yap';
+
+  @override
+  String get firstYear => '1. Sınıf';
+
+  @override
+  String get secondYear => '2. Sınıf';
+
+  @override
+  String get thirdYear => '3. Sınıf';
+
+  @override
+  String get fourthYear => '4. Sınıf';
+
+  @override
+  String get graduateStudent => 'Lisansüstü Öğrenci';
+
+  @override
+  String get phdStudent => 'Doktora Öğrencisi';
+
+  @override
+  String get yearOfStudyOptional => 'Sınıf (isteğe bağlı)';
+
+  @override
+  String get selectYearOfStudy => 'Sınıf seçin';
+
+  @override
+  String get birthDateOptional => 'Doğum Tarihi (isteğe bağlı)';
+
+  @override
+  String get selectBirthDate => 'Doğum tarihi seçin';
+
+  @override
+  String get male => 'Erkek';
+
+  @override
+  String get female => 'Kadın';
+
+  @override
+  String get preferNotToSay => 'Belirtmek istemiyorum';
+
+  @override
+  String get genderOptional => 'Cinsiyet (isteğe bağlı)';
+
+  @override
+  String get selectGender => 'Cinsiyet seçin';
+
+  @override
+  String get language => 'Dil';
+
+  @override
+  String get languageDesc => 'Uygulama dilini değiştirin';
+
+  @override
+  String get rememberMe => 'Beni Hatırla';
 }
